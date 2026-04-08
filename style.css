@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 2vw;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevent any scrolling */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #212121;
+}
+
+.viewport {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Make the viewport span the full width of the viewport */
+}
+
+.section {
+  gap: 0.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center the slots vertically */
+  height: 33.33vh; /* Set each section to be 33.33% of the viewport height */
+  justify-content: center; /* Center the slots horizontally */
+  border: 0.25vw solid white;
+  width: 100%; /* Make each section take up the full width of the viewport */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.slot {
+  background-color: white;
+  width: 7vw; /* Set a fixed width to maintain the aspect ratio */
+  height: 9vw; /* Set a fixed height for the slots */
+  display: flex;
+  opacity: 0;
+}
+
+.dragging {
+  user-select: none;
+  opacity: 0;
+}
+
+.card {
+  position: absolute;
+  color: black;
+  width: 7vw; /* Adjust size as needed */
+  height: 9vw; /* Adjust size as needed */
+  background-color: lightgray;
+  border: 0.25vw solid white; /* White outer border */
+  border-radius: 0.5vw;
+  pointer-events: none; /* Prevent interaction */
+  filter: drop-shadow(0 0 0.1vw black);
+  transform-style: preserve-3d;
+}
+
+.card.smooth-move {
+  transition: left 0.3s cubic-bezier(.47,1.64,.41,.8), top 0.15s cubic-bezier(.47,1.64,.41,.8); /* Springier effect */
+}
+
+#refresh-button {
+  position: absolute;
+  font-size: 1vw;
+  width: 9vw;
+  height: 3vw;
+  top: 1vw;
+  right: 12vw; /* Swapped position */
+  padding: 0.2vw 0.2vw;
+  color: black;
+  background-color: lightgray;
+  border: 0.25vw solid white;
+  border-radius: 0.5vw;
+  user-select: none;
+  cursor: pointer;
+}
+
+#refresh-button:hover {
+  background-color: darkgray;
+}
+
+#upgrade-button {
+  user-select: none;
+  position: absolute;
+  font-size: 1vw;
+  width: 9vw;
+  height: 3vw;
+  top: 1vw;
+  right: 1vw; /* Swapped position */
+  padding: 0.2vw 0.2vw;
+  color: black;
+  background-color: lightgray;
+  border: 0.25vw solid white;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+#upgrade-button:hover {
+  background-color: darkgray;
+}
+
+#end-turn-button {
+  user-select: none;
+  position: absolute;
+  font-size: 1vw;
+  width: 9vw;
+  height: 3vw;
+  top: 50%; /* Center vertically */
+  right: 1vw; /* Position it on the right side */
+  transform: translateY(-50%); /* Adjust position to perfectly center vertically */
+  padding: 0.2vw 0.2vw;
+  color: black;
+  background-color: lightgray;
+  border: 0.25vw solid white;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+#end-turn-button:hover {
+  background-color: darkgray;
+}
+
+#rank-text {
+  user-select: none;
+  position: absolute;
+  top: calc(1vw + 3vw + 0.5vw); /* Position below the upgrade button */
+  right: 1vw; /* Align with the right edge of the upgrade button */
+  width: 9vw; /* Match the width of the upgrade button */
+  font-size: 1.5vw; /* Adjust font size as needed */
+  color: white;
+  font-weight: bold;
+  text-align: center; /* Center the text within the element */
+}
+
+
+/* New Gold text */
+#gold-text {
+  position: absolute;
+  user-select: none;
+  bottom: 1vw;
+  right: 1vw;
+  font-size: 2vw;
+  color: white;
+  font-weight: bold;
+}
+
+.shop-card-lock {
+  position: absolute;
+  background-color: lightgray;
+  border: none;
+  font-size: 1vw; /* Adjust as needed */
+  width: 5vw;     /* Adjust as needed */
+  height: 2.5vw;  /* Adjust as needed */
+  padding: 0;     /* Remove padding to maintain size */
+  cursor: pointer;
+  z-index: 1000;  /* Ensures the lock stays on top */
+  text-align: center;
+  line-height: 2.5vw; /* Vertically center the text */
+}
+
+.shop-card-lock:hover {
+  background-color: darkgray;
+}

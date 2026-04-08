@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+
+  <div id="lobby-screen" class="viewport">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2vw; background: rgba(0,0,0,0.8); padding: 4vw; border: 0.25vw solid white; border-radius: 1vw;">
+      <h1 style="color: white;">Circo Maluco Multiplayer</h1>
+      <button id="host-btn" style="font-size: 2vw; padding: 1vw; cursor: pointer;">Host Game</button>
+      <div style="color: white;">OR</div>
+      <div style="display: flex; gap: 1vw;">
+        <input id="join-input" type="text" placeholder="Room Code" style="font-size: 2vw; padding: 0.5vw;" />
+        <button id="join-btn" style="font-size: 2vw; padding: 1vw; cursor: pointer;">Join Game</button>
+      </div>
+      <div id="lobby-status" style="color: yellow; font-size: 1.5vw; text-align: center; height: 2vw;"></div>
+    </div>
+  </div>
+
+  <div id="game-screen" class="viewport" style="display: none; width: 100%; height: 100%;">
+    <div id="rank-text">Rank 1</div>
+    <button id="refresh-button">(1) Refresh Slots</button>
+    <button id="upgrade-button">Upgrade</button>
+    <button id="end-turn-button">End Turn (0/2)</button>
+    <div id="gold-text">Gold: 1</div> <!-- New Gold text -->
+    <div class="section" id="shop">
+      <!-- Slots will be generated here -->
+    </div>
+    <div class="section" id="board">
+      <!-- Empty middle section -->
+    </div>
+    <div class="section" id="hand">
+      <!-- Empty bottom section -->
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
