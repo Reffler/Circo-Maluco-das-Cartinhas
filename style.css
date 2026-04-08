@@ -170,3 +170,49 @@ body {
 .shop-card-lock:hover {
   background-color: darkgray;
 }
+
+.card-atk {
+  position: absolute;
+  bottom: 0.3vw;
+  left: 0.5vw;
+  color: #ff4444;
+  font-weight: bold;
+  font-size: 1.4vw;
+  text-shadow: 0 0 0.2vw black;
+}
+
+.card-hp {
+  position: absolute;
+  bottom: 0.3vw;
+  right: 0.5vw;
+  color: #44ff44;
+  font-weight: bold;
+  font-size: 1.4vw;
+  text-shadow: 0 0 0.2vw black;
+}
+
+.card-lock-indicator {
+  position: absolute;
+  top: 0.3vw;
+  right: 0.5vw;
+  color: gold;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+.combat-card {
+  position: relative !important;
+  display: flex !important;
+  opacity: 1 !important;
+  transition: transform 0.3s, opacity 0.5s;
+}
+
+.combat-card.hit {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-0.5vw); }
+  75% { transform: translateX(0.5vw); }
+}
