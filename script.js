@@ -1,4 +1,4 @@
-import { joinRoom } from '@trystero-p2p/torrent';
+import { joinRoom } from '@trystero-p2p/mqtt';
 
 document.addEventListener("DOMContentLoaded", () => {
   const shopSection = document.getElementById('shop'),
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     room.onPeerJoin(peerId => {
       lobbyScreen.style.display = 'none';
       gameScreen.style.display = 'flex'; // Start the game!
+      generateRandomSlots(); // Load the cards ONLY after joining
     });
     
     room.onPeerLeave(peerId => {
@@ -752,5 +753,4 @@ function endDragOperation() {
   }
 
   addDragAndDropListeners();
-  generateRandomSlots();
 });
